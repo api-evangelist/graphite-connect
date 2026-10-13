@@ -1,0 +1,115 @@
+# Graphite Connect API Documentation
+
+> Documentation for Graphite Connect API
+
+## Guides: Documentation
+- [Public API Integrations](https://apidocs.graphiteconnect.com/docs/public-api-integrations-1.md): Basic Workflow for Developing Public API ERP Integrations
+- [Hermes for E-Business Suite](https://apidocs.graphiteconnect.com/docs/ebs.md): Graphite Connect Standard E-Business Suite Integration Connector
+- [Hermes for SAP ECC](https://apidocs.graphiteconnect.com/docs/hermes-for-sap-ecc.md): Installation and configuration guide for Hermes, the graphiteConnect adapter for SAP ECC on-premise systems.
+- [Hermes for S4/Hana](https://apidocs.graphiteconnect.com/docs/hermes-for-s4hana.md): Installation, and Configuration of Hermes instance for S4/HANA Interface
+- [NetSuite SuiteApp Credentials Setup](https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-1.md): Configure NetSuite to store and use your Graphite API Key
+- [NetSuite SuiteApp V3 Release Notes](https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-v3-release-notes.md): Release notes for SuiteApp updates, starting with version 3.4.0
+- [NetSuite SuiteApp](https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-2.md): For syncing vendor master data from Grapite to NetSuite
+- [NetSuite SuiteApp Credentials Setup](https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-credentials-setup-copy.md): Configure NetSuite to store and use your Graphite API Key
+- [NetSuite SuiteApp Installation](https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-copy.md): For syncing vendor master data from Grapite to NetSuite
+- [NetSuite SuiteApp V4 Release Notes](https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-v4-release-notes.md)
+- [SFTP Integrations](https://apidocs.graphiteconnect.com/docs/sftp-integrations.md)
+  - [JSON SFTP Integration](https://apidocs.graphiteconnect.com/docs/json-sftp-integration.md)
+- [Transformations](https://apidocs.graphiteconnect.com/docs/transformations.md)
+  - [Loader](https://apidocs.graphiteconnect.com/docs/loader.md)
+  - [Transformation Template](https://apidocs.graphiteconnect.com/docs/transformation-template.md)
+  - [Transformation Mapping](https://apidocs.graphiteconnect.com/docs/transformation-mapping.md)
+  - [Source Expression Language](https://apidocs.graphiteconnect.com/docs/source-expression-language.md)
+
+## Guides: Guides
+- [Authentication](https://apidocs.graphiteconnect.com/docs/authentication.md): How to authenticate with the Graphite Connect Public API using OAuth 2.0
+- [Banking Data Layout](https://apidocs.graphiteconnect.com/docs/banking-data-layout.md): Structure of banking data in graphiteConnect supplier profiles, including the Banking_Account_Object and ERP-selected accounts.
+- [Company Data Layout](https://apidocs.graphiteconnect.com/docs/company-data-layout.md): Structure of company profile data returned by the graphiteConnect public API, including JSON hierarchy and the schema API.
+- [Connection Lifecycle](https://apidocs.graphiteconnect.com/docs/connection-lifecycle.md): Connection phases, invite process, duplicate detection, and disconnect behavior in graphiteConnect.
+- [ERP Record](https://apidocs.graphiteconnect.com/docs/erp-record.md): Field definitions for the ERP_Record group used in ERP integrations.
+- [Events API](https://apidocs.graphiteconnect.com/docs/events-api.md): Retrieve and filter audit events for your graphiteConnect organization using the Events API.
+- [File Data Layout](https://apidocs.graphiteconnect.com/docs/file-data-layout.md): How file objects appear in graphiteConnect profile data, and how to retrieve and upload files via the public API.
+- [Linking to Graphite](https://apidocs.graphiteconnect.com/docs/linking-to-graphite.md): Deep-link into graphiteConnect connections and specific profile questions using URL parameters.
+- [Location Data Layout](https://apidocs.graphiteconnect.com/docs/location-data-layout.md): Structure of location data in graphiteConnect supplier profiles, including address sub-fields and validation indicators.
+- [Pagination](https://apidocs.graphiteconnect.com/docs/pagination.md): How to use pagination query parameters for graphiteConnect APIs that return large result sets.
+- [Ready To Transact](https://apidocs.graphiteconnect.com/docs/ready-to-transact.md): How to determine if a supplier is ready for transactions using blocked status and ERP_Ready_To_Transaction.
+- [Swagger API Access](https://apidocs.graphiteconnect.com/docs/swagger-access.md): How to access the graphiteConnect Swagger UI, authenticate, and make live API calls.
+- [Tasks API](https://apidocs.graphiteconnect.com/docs/tasks-api.md): Fetch open tasks for a supplier connection and use task status to determine Ready to Transact readiness.
+- [User Data](https://apidocs.graphiteconnect.com/docs/user-data.md): Retrieve graphiteConnect user information and roles via the public API, with pagination support.
+
+## API Reference: Rest API Information
+- [Authentication](https://apidocs.graphiteconnect.com/reference/authentication.md)
+
+## API Reference: graphiteConnect Public API
+- [Get changes for a connection](https://apidocs.graphiteconnect.com/reference/changesget_for_connection.md): Use this when retrieving changed data for a specific connected company.
+- [Get answer change history](https://apidocs.graphiteconnect.com/reference/changesget_answer_history.md): Use this when reviewing answer changes for a connection.
+- [Get kit answer change history](https://apidocs.graphiteconnect.com/reference/changesget_kit_answer_history.md): Use this when reviewing answer changes for a kit.
+- [List changed connections](https://apidocs.graphiteconnect.com/reference/changeslist_connections.md): Use this when finding connections with changes to synchronize.
+- [Acknowledge multiple synchronizations](https://apidocs.graphiteconnect.com/reference/changesbulk_acknowledge.md): Use this when marking multiple connection synchronizations as successful.
+- [Acknowledge a synchronization](https://apidocs.graphiteconnect.com/reference/changesacknowledge.md): Use this when recording the result of a connection synchronization.
+- [List profile topic owners](https://apidocs.graphiteconnect.com/reference/profileslist_topic_owners.md): Use this when retrieving owners assigned to profile topics.
+- [Get profile data](https://apidocs.graphiteconnect.com/reference/profilesget.md): Use this when retrieving profile answers for a company. Omit `publicId` to return the calling entity's own profile.
+- [Replace profile data (deprecated)](https://apidocs.graphiteconnect.com/reference/profilesreplace.md): Deprecated. Use PATCH /profile/{publicId} instead. Omit `publicId` to update the calling entity's own profile.
+- [Update profile data](https://apidocs.graphiteconnect.com/reference/profilesupdate.md): Use this when partially updating profile answer data for a company. Omit `publicId` to update the calling entity's own profile.
+- [Get example profile data](https://apidocs.graphiteconnect.com/reference/profilesget_example.md): Use this when inspecting the expected profile data shape.
+- [Get a task](https://apidocs.graphiteconnect.com/reference/tasksget.md): Use this when you know a task ID and need the current task details.
+- [Complete a workflow or user-generated task](https://apidocs.graphiteconnect.com/reference/taskscomplete.md): Use this when the user explicitly asks to complete an open workflow or user-generated task. Returns the updated task. Only tasks with type `workflow` or `user_generated` can be completed through this…
+- [List task types](https://apidocs.graphiteconnect.com/reference/taskslist_types.md): Use this when you need the supported Graphite task type values.
+- [List tasks for a connection or user](https://apidocs.graphiteconnect.com/reference/taskslist_for_connection.md): Use this after locating a connection to determine its open work or who it is waiting on. Pass the connection public ID as forCompanyPublicId; omit it only when intentionally listing tasks across…
+- [List connections](https://apidocs.graphiteconnect.com/reference/connectionslist.md): Use this when listing or paging connections with operational filters. Optionally provide `connectionId` to fetch a single connection. Use `GET /search/connections` to locate an individual connection…
+- [Invite a connection](https://apidocs.graphiteconnect.com/reference/connectionsinvite.md): Use this when the user explicitly asks to create and invite a new connection.
+- [Invite a connection (deprecated)](https://apidocs.graphiteconnect.com/reference/connectionsinvite_deprecated.md): Deprecated. Use POST /connections instead.
+- [List emails](https://apidocs.graphiteconnect.com/reference/emailslist.md): Use this when searching email delivery records.
+- [Update email status](https://apidocs.graphiteconnect.com/reference/emailsupdate_status.md): Use this when recording an email delivery status update.
+- [Download a file](https://apidocs.graphiteconnect.com/reference/filesdownload.md): Use this when retrieving file contents by file ID.
+- [Get a kit schema](https://apidocs.graphiteconnect.com/reference/schemasget_kit.md): Use this when retrieving the question schema for a kit type.
+- [Get a profile schema](https://apidocs.graphiteconnect.com/reference/schemasget_profile.md): Use this when retrieving the profile schema for a company or connection. Omit `publicId` to return a superset schema across all connections.
+- [Get the current user](https://apidocs.graphiteconnect.com/reference/usersget_current.md): Returns the authenticated user and their assigned roles for the active company.
+- [List users](https://apidocs.graphiteconnect.com/reference/userslist.md): Use this when searching users for the active company.
+- [List roles](https://apidocs.graphiteconnect.com/reference/userslist_roles.md): Use this when retrieving roles available to users.
+- [List role mappings](https://apidocs.graphiteconnect.com/reference/userslist_role_mappings.md): Use this when retrieving configured user role mappings.
+- [List user events](https://apidocs.graphiteconnect.com/reference/userslist_events.md): Use this when reviewing audit events involving users.
+- [List user event types](https://apidocs.graphiteconnect.com/reference/userslist_event_types.md): Use this when discovering available user audit event types.
+- [Bulk invite users](https://apidocs.graphiteconnect.com/reference/usersbulk_invite.md): Use this when importing and inviting users from a spreadsheet.
+- [Create a Data Share link, and optionally email it to the recipient.](https://apidocs.graphiteconnect.com/reference/data_sharecreate_link.md): Use this when sharing selected company data with a recipient.
+- [Get info about Data Shares that created NDAs, and when and what was signed.](https://apidocs.graphiteconnect.com/reference/data_sharelist_nda_entries.md): Use this when reviewing NDA acceptance activity for Data Shares.
+- [Get a list of topics and their IDs to pass to `limitAccessToElements` when creating a link.](https://apidocs.graphiteconnect.com/reference/data_sharelist_topics.md): Use this when choosing topics to include in a Data Share link.
+- [Fetch a specific NDA template.](https://apidocs.graphiteconnect.com/reference/nda_templatesget.md): Use this when retrieving an NDA template by ID or slug.
+- [Update an existing NDA template by Slug or ID.](https://apidocs.graphiteconnect.com/reference/nda_templatesupdate.md): Use this when replacing an NDA template by ID or slug.
+- [Fetch all the NDA templates.](https://apidocs.graphiteconnect.com/reference/nda_templateslist.md): Use this when listing NDA templates for the active company.
+- [Create a new NDA template.](https://apidocs.graphiteconnect.com/reference/nda_templatescreate.md): Use this when adding an NDA template.
+- [Get the last spend data update time](https://apidocs.graphiteconnect.com/reference/spend_dataget_last_update.md): Use this when checking when spend data was last updated.
+- [Update spend data](https://apidocs.graphiteconnect.com/reference/spend_dataupdate.md): Use this when creating or replacing spend transactions.
+- [Complete an approval](https://apidocs.graphiteconnect.com/reference/approvalscomplete.md): Use this when approving or rejecting a pending approval.
+- [List approvals](https://apidocs.graphiteconnect.com/reference/approvalslist.md): Use this when retrieving approvals assigned to companies or users.
+- [Get a value set](https://apidocs.graphiteconnect.com/reference/value_setsget.md): Use this when retrieving values for a specific value set.
+- [List value sets](https://apidocs.graphiteconnect.com/reference/value_setslist.md): Use this when discovering available value set keys.
+- [Get a transformation template](https://apidocs.graphiteconnect.com/reference/mappingsget_template.md): Use this when retrieving a transformation template by name.
+- [List transformation mappings](https://apidocs.graphiteconnect.com/reference/mappingslist_transformations.md): Use this when retrieving configured transformation mappings.
+- [List transformation templates](https://apidocs.graphiteconnect.com/reference/mappingslist_templates.md): Use this when discovering available transformation templates.
+- [List transformation tables](https://apidocs.graphiteconnect.com/reference/mappingslist_tables.md): Use this when retrieving available transformation lookup tables.
+- [Search kits](https://apidocs.graphiteconnect.com/reference/kitssearch.md): Use this when finding kits by type, text, or answer filters.
+- [List changed kits](https://apidocs.graphiteconnect.com/reference/kitslist_changed.md): Use this when finding kits changed since the last synchronization.
+- [Acknowledge a kit synchronization](https://apidocs.graphiteconnect.com/reference/kitsacknowledge.md): Use this when recording the result of synchronizing a kit.
+- [Get example kit data](https://apidocs.graphiteconnect.com/reference/kitsget_example.md): Use this when inspecting the expected data shape for a kit type.
+- [Get kit details](https://apidocs.graphiteconnect.com/reference/kitsget_details.md): Use this when retrieving answers and metadata for a kit.
+- [Replace kit data](https://apidocs.graphiteconnect.com/reference/kitsreplace_data.md): Use this when replacing answer data for a kit.
+- [Update kit data](https://apidocs.graphiteconnect.com/reference/kitsupdate_data.md): Use this when partially updating answer data for a kit.
+- [List kit types](https://apidocs.graphiteconnect.com/reference/kitslist_types.md): Use this when discovering available kit types.
+- [Get a list](https://apidocs.graphiteconnect.com/reference/listsget.md): Use this when retrieving values for a specific list.
+- [List lists](https://apidocs.graphiteconnect.com/reference/listslist.md): Use this when discovering available list keys.
+- [Get a connection profile](https://apidocs.graphiteconnect.com/reference/connectionsget_profile.md): Use this when you already know a connection's Graphite public ID and need its detailed profile data. Search first when the identifier is uncertain.
+- [Get kit data](https://apidocs.graphiteconnect.com/reference/kitsget_data.md): Use this when you know a kit type and ID and need its submitted profile data.
+- [Search connections](https://apidocs.graphiteconnect.com/reference/connectionssearch.md): Use this when locating an individual connection by company name, Graphite public ID, or tax ID. Verify name and public-ID matches in the returned connection, and verify tax IDs against its tax-ID…
+- [Get warehouse table metadata](https://apidocs.graphiteconnect.com/reference/warehousedescribe_table.md): Use this when preparing to query an unfamiliar warehouse table. Returns its ordered columns without loading joins or the complete schema.
+- [Get warehouse metadata](https://apidocs.graphiteconnect.com/reference/warehouseget_complete_metadata.md): Use this when debugging schema discovery requires the complete schema. Returns every queryable table, column, and supported join and may be very large. Prefer warehouse.list_tables,…
+- [List warehouse tables](https://apidocs.graphiteconnect.com/reference/warehouselist_tables.md): Use this when you need a compact inventory of warehouse tables. Returns business descriptions and synonyms; describe only relevant unfamiliar tables before querying.
+- [Get joins between warehouse tables](https://apidocs.graphiteconnect.com/reference/warehouseget_joins.md): Use this when a warehouse query needs multiple tables. Returns supported joins whose source and destination are both in tableNames.
+- [Search the warehouse schema](https://apidocs.graphiteconnect.com/reference/warehousesearch_schema.md): Use this when you know a business concept but not its warehouse table. Searches table names, business descriptions, synonyms, and column names and returns compact table summaries.
+- [Explain a warehouse query](https://apidocs.graphiteconnect.com/reference/warehouseexplain.md): Use this when validating a complex or potentially expensive warehouse query before execution. Returns its PostgreSQL plan without executing the query.
+- [Query the warehouse](https://apidocs.graphiteconnect.com/reference/warehousequery.md): Use this when the user asks for aggregate reporting, counts, trends, or analysis requiring SQL over Graphite warehouse tables. Inspect relevant table metadata first. Executes one read-only SELECT or…
+
+## Changelog
+- [Answer Metadata Update](https://apidocs.graphiteconnect.com/changelog/public-api-updates.md)
+- [Hermes Version 2 Release](https://apidocs.graphiteconnect.com/changelog/hermes-version-2-release.md)
+- [September 2023 Release](https://apidocs.graphiteconnect.com/changelog/september-2023-release.md)

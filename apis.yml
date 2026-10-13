@@ -1,23 +1,148 @@
 aid: graphite-connect
+
 name: Graphite Connect
-description: 'Graphite Connect is a company surfaced via the API Evangelist harvest backlog (source: tag-qc)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/691cd35f19ecbb108803b3a7/697ae1b53f8e0b2511a8f48b_og.jpg
+
+description: Graphite Connect provides a supplier management platform that automates procurement workflows, offers AI‑driven validation, risk
+  assessments, and a patented network approach to consolidate supplier data. The solution helps global procurement teams onboard suppliers faster,
+  improve data quality, and gain visibility across the supply chain, addressing the chaos of bad supplier data with integrated compliance, risk,
+  and relationship management tools.
+
 url: https://raw.githubusercontent.com/api-evangelist/graphite-connect/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:tag-qc
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-13 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-13'
+
 modified: '2026-10-13'
+
 tags:
 - Company
-apis: []
+- Supplier Management
+- Procurement
+- AI
+- Risk Management
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/graphite-connect-rules.yml
+- type: JSONLD
+  url: json-ld/graphite-connect-context.jsonld
+- type: Vocabulary
+  url: vocabulary/graphite-connect-vocabulary.yml
+- type: DataModel
+  url: data-model/graphite-connect-data-model.yml
+- type: ChangeLog
+  url: changelog/graphite-connect-changelog.yml
+- type: Conventions
+  url: conventions/graphite-connect-conventions.yml
+- type: Authentication
+  url: authentication/graphite-connect-authentication.yml
+- type: Conformance
+  url: conformance/graphite-connect-conformance.yml
+- type: LLMsTxt
+  url: llms/graphite-connect-llms.txt
+- type: WellKnown
+  url: well-known/graphite-connect-well-known.yml
+- type: Hosts
+  url: hosts/graphite-connect-hosts.yml
+- type: Vendors
+  url: vendors/graphite-connect-vendors.yml
+- type: StatusPage
+  url: https://status.graphiteconnect.com/
+- type: Security
+  url: https://www.graphiteconnect.com/security
+- type: PrivacyPolicy
+  url: https://www.graphiteconnect.com/legal/privacy-policy
+- type: Leadership
+  url: https://www.graphiteconnect.com/team
+- type: ChangeLog
+  url: https://apidocs.graphiteconnect.com/changelog
+- type: APIReference
+  url: https://apidocs.graphiteconnect.com/reference
+- type: GettingStarted
+  url: https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-1
+- type: OAuthScopes
+  url: scopes/graphite-connect-scopes.yml
+- type: DomainSecurity
+  url: security/graphite-connect-domain-security.yml
 - type: Website
   url: https://www.graphiteconnect.com
+- type: Blog
+  url: https://www.graphiteconnect.com/blog
+- type: Documentation
+  url: https://www.graphiteconnect.com/product
+- type: Pricing
+  url: https://www.graphiteconnect.com/solutions
+- type: Support
+  url: https://www.graphiteconnect.com/press
+
+apis:
+- name: Graphite Connect API
+  description: Supplier management platform API (details not publicly documented)
+  humanURL: https://www.graphiteconnect.com/product
+  baseURL: null
+  properties: []
+  x-coverage:
+    state: unreadable
+    reason: js-rendered-docs
+    detail: Homepage loads via Cloudflare and serves HTML; no machine‑readable OpenAPI or other contract found.
+    evidence:
+    - url: https://www.graphiteconnect.com
+      status: 200
+    checked: '2026-10-13'
+  aid: graphite-connect:graphite-connect-api-2
+- aid: graphite-connect:graphite-connect-api
+  name: Graphite Connect API
+  description: 'Graphite Connect API as documented publicly: 4 operations. Contract generated from the documentation by API Evangelist (2026-10-13);
+
+    not the provider''s own document.'
+  humanURL: https://apidocs.graphiteconnect.com/reference
+  baseURL: https://poc.projectgraphite.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/graphite-connect-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/graphite-connect-post-oauth-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-patch-profile-publicid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-post-api-oauth-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-patch-profile-publicid-request-schema.json
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  method: derived
+  generated: '2026-10-13'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company serves an API surface but requires credentials before any description of it can be read
+  evidence:
+  - url: https://apidocs.graphiteconnect.com/mcp
+    status: 401
+  - url: https://app.graphiteconnect.com/mcp
+    status: 401
+  - url: https://www.graphiteconnect.com
+    status: 200
+x-enrichment:
+  date: '2026-10-13'
+  status: enriched
+  artifacts_added: 25
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

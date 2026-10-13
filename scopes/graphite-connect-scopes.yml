@@ -1,0 +1,13 @@
+generated: '2026-10-13'
+method: derived
+source: openapi/graphite-connect-openapi-generated.yml
+schemes:
+- name: OAuth_2.0_Client_Credentials
+  source: openapi/graphite-connect-openapi-generated.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://app.graphiteconnect.com/api/oauth/token
+scopes:
+- name: default
+  description: No scopes defined in provider contract
+  source: openapi/_ae-authored/graphite-connect-openapi-generated.yml

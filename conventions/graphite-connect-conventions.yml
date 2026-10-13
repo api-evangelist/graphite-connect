@@ -1,0 +1,22 @@
+generated: '2026-10-13'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://apidocs.graphiteconnect.com/docs/pagination.md
+sources:
+- https://apidocs.graphiteconnect.com/docs/pagination.md
+- https://apidocs.graphiteconnect.com/docs/pagination
+- https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-1.md
+- https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-credentials-setup-copy.md
+idempotency:
+  coverage: na
+pagination:
+  style: offset‑based page index
+  params:
+  - limit – maximum number of results per request (max 1000)
+  - page – 0‑indexed page number (page=0 returns first page)
+  - total – returned in response body indicating total result count
+  response_fields:
+  - total – total number of results across all pages
+  - results – array of items for the requested page
+  docs: https://apidocs.graphiteconnect.com/docs/pagination.md
+docs: https://apidocs.graphiteconnect.com/docs/pagination.md

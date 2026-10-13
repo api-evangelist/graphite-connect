@@ -1,0 +1,61 @@
+generated: '2026-10-13'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-v3-release-notes.md
+sources:
+- https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-v3-release-notes.md
+- https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-v4-release-notes.md
+- https://apidocs.graphiteconnect.com/reference/profilesreplace.md
+- https://apidocs.graphiteconnect.com/reference/connectionsinvite_deprecated.md
+entries:
+- breaking: false
+  highlights:
+  - NetSuite integration errors are now reliably surfaced on the related ERP Record(s) in Graphite.
+  - When an error is not tied to a specific ERP Record instance, it is now applied to all ERP Record rows so the error is never dropped.
+  - Error detail is now written to the "Last Integration Notes" field.
+  - '"Last Integration Status" is now correctly set to "Failure" for failed syncs (previously it could remain "Pending").'
+- breaking: false
+  highlights:
+  - Added the ability to set parent-record fields from values on newly created child sublist lines (reference field mappings), so parent fields
+    can be populated from freshly added line items during a sync.
+- breaking: false
+  highlights:
+  - Fixed a bug where the spend integration could create duplicate Purchase Orders and Invoices.
+  - New PO/Invoice detection now queries the most recent record and looks records up by ID rather than paging large result sets.
+- breaking: false
+  highlights:
+  - Added support for filtering counterparty tasks (filterCounterpartyTasks) on change-detection API requests.
+- breaking: false
+  highlights:
+  - 'Made profile synchronization more resilient: a failure fetching one connection''s profile or file no longer halts the entire sync run — the
+    integration now continues processing the remaining connections.'
+- breaking: false
+  highlights:
+  - Send back unbilled balances to new spend kit
+  - next approver data now comes back to a table question on the Purchase Order kit in graphite.
+- breaking: false
+  highlights:
+  - Fix bug where next approver field was not syncing back to Graphite.
+  - Add ability to configure the field used for the ERP bank reference.
+- breaking: false
+  highlights:
+  - Fix bug where data would not sync back to own entity in Graphite.
+- breaking: false
+  highlights:
+  - Add ability to sync PO next approver field from Netsuite back to Graphite.
+  - Add ability to execute a saved search and send results back to graphite.
+- breaking: false
+  highlights:
+  - Fix a bug where an error would happen when we try to fetch system note search results when there are none
+  - Fix a bug when querying latest transaction record on Graphite when there are over 10000 of each type
+  - Fixed a bug where payment transaction dates may not be synced back to Graphite.
+  - Enhanced error messages
+- breaking: false
+  highlights:
+  - Added Secret ID script parameter to configure name of API Secret that will be used for the script.
+- breaking: false
+  highlights:
+  - Fixed a bug where contact records would never have valid search filters.
+current_version: 4.2.47
+note: Versioning scheme follows major.minor.patch format.
+docs: https://apidocs.graphiteconnect.com/docs/netsuite-suiteapp-v3-release-notes.md

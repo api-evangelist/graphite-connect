@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/graphite-connect/main/json-schema/graphite-connect-patch-profile-publicid-response-schema.json",
+  "title": "PatchProfilePublicidResponse",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/graphite-connect-openapi-generated.yml#/components/schemas/PatchProfilePublicidResponse",
+  "type": "object",
+  "properties": {
+    "Updated company data": {
+      "type": "object",
+      "description": "JSON document of updated company data. Document properties are answer keys."
+    }
+  }
+}

@@ -1,0 +1,100 @@
+generated: '2026-10-13'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 5
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - docs
+  - other
+  - status
+  - website
+hosts:
+- host: api.graphiteconnect.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: graphiteconnect.com
+  role: api
+  relation: own
+- host: apidocs.graphiteconnect.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - ChangeLog
+  - APIReference
+  - GettingStarted
+  serves:
+  - docs
+  registrable_domain: graphiteconnect.com
+  role: docs
+  relation: own
+- host: app.graphiteconnect.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: graphiteconnect.com
+  role: other
+  relation: own
+- host: poc.projectgraphite.com
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: projectgraphite.com
+  role: other
+  relation: other-domain
+- host: status.graphiteconnect.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: graphiteconnect.com
+  role: status
+  relation: own
+- host: www.graphiteconnect.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Security
+  - PrivacyPolicy
+  - Leadership
+  - Website
+  - Blog
+  - Documentation
+  - Pricing
+  - Support
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: graphiteconnect.com
+  role: website
+  relation: own

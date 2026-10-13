@@ -1,0 +1,35 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/graphite-connect-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.graphiteconnect.com, www.graphiteconnect.com, apidocs.graphiteconnect.com,
+  app.graphiteconnect.com; verdict gated (https://apidocs.graphiteconnect.com/mcp answered 401: the edge authenticates before it routes, which
+  proves nothing either way). Candidate tools below are derived from the 4 operation(s) in the provider''s own OpenAPI (4 listed); they describe
+  what a server WOULD expose, not one that exists.'
+tools:
+- name: post_api_oauth_token
+  operationId: post_api_oauth_token
+  method: POST
+  path: /api/oauth/token
+  description: POST /api/oauth/token
+- name: post_oauth_token
+  operationId: post_oauth_token
+  method: POST
+  path: /oauth/token
+  description: Generating OAUTH Tokens
+- name: patch_profile_publicid
+  operationId: patch_profile_publicid
+  method: PATCH
+  path: /profile/{publicid}
+  description: Replace profile data (deprecated)
+- name: get_search_connections
+  operationId: get_search_connections
+  method: GET
+  path: /search/connections
+  description: Use GET /search/connections to locate an individual connection by name, public ID, or tax ID.

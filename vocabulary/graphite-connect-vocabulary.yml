@@ -1,0 +1,30 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/graphite-connect-openapi-generated.yml
+vocabulary:
+  name: Graphite Connect Domain Vocabulary
+  description: 'Terms declared by Graphite Connect''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-13'
+  terms:
+  - term: PostApiOauthTokenRequest
+    definition: 'Object declared by the contract with fields: client_id, client_secret, grant_type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/graphite-connect-openapi-generated.yml#/components/schemas/PostApiOauthTokenRequest
+  - term: PostOauthTokenRequest
+    definition: 'Object declared by the contract with fields: client_id, client_secret, grant_type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/graphite-connect-openapi-generated.yml#/components/schemas/PostOauthTokenRequest
+  - term: PatchProfilePublicidRequest
+    definition: 'Object declared by the contract with fields: Answer key.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/graphite-connect-openapi-generated.yml#/components/schemas/PatchProfilePublicidRequest
+  - term: PatchProfilePublicidResponse
+    definition: 'Object declared by the contract with fields: Updated company data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/graphite-connect-openapi-generated.yml#/components/schemas/PatchProfilePublicidResponse

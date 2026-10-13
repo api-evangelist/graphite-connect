@@ -1,0 +1,227 @@
+openapi: 3.1.0
+info:
+  title: Graphite Connect API
+  version: '2026-10-13'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-13: 4 operation(s) read from 8 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Graphite Connect has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 1
+    documentation: 3
+    pages-with-code: 3
+    pages-read: 8
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-13'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://apidocs.graphiteconnect.com/reference
+  - https://apidocs.graphiteconnect.com/reference/authentication
+  - https://apidocs.graphiteconnect.com/reference/connectionslist
+  - https://apidocs.graphiteconnect.com/reference/profilesreplace
+  - https://apidocs.graphiteconnect.com/reference/authentication.md
+  - https://apidocs.graphiteconnect.com/reference/connectionslist.md
+  - https://apidocs.graphiteconnect.com/reference/profilesreplace.md
+  - https://apidocs.graphiteconnect.com/reference/connections-api
+servers:
+- url: https://poc.projectgraphite.com
+paths:
+  /api/oauth/token:
+    post:
+      operationId: post_api_oauth_token
+      tags:
+      - Api
+      summary: POST /api/oauth/token
+      x-source: https://apidocs.graphiteconnect.com/reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiOauthTokenRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --location --request POST ''https://poc.projectgraphite.com/api/oauth/token''  --header ''Content-Type: application/json''  --data-raw
+          ''{"client_id": "US1234.acdc12345678", "client_secret": "aaaaaf8bbbbbbbb90ecccccccc4ddddd", "grant_type": "client_credentials"}'' Updated
+          11 months ago Changes API Did this page help you? Yes No Updated 11 months ago Changes API Did this page help you? Yes No Genera'
+  /oauth/token:
+    post:
+      operationId: post_oauth_token
+      tags:
+      - Oauth
+      summary: Generating OAUTH Tokens
+      description: Obtain an OAuth 2.0 bearer token using the client credentials flow.
+      x-source: https://apidocs.graphiteconnect.com/reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostOauthTokenRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /profile/{publicid}:
+    patch:
+      operationId: patch_profile_publicid
+      tags:
+      - Profile
+      summary: Replace profile data (deprecated)
+      x-source: https://apidocs.graphiteconnect.com/reference/profilesreplace
+      parameters:
+      - name: publicid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: connectionRole
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Role of the user updating the connection - optional buyer seller both
+      - name: locale
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Language locale of the user updating the profile
+      - name: slimResponse
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Only return the connection portion of the response. Don't return the answers.
+      - name: updateChangeDateForInterface
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Set to false to cause the profile change to not update interface change dates. This will prevent the change from causing
+          the connection to show up on the change list.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchProfilePublicidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchProfilePublicidResponse'
+      x-evidence:
+        kind: documentation
+  /search/connections:
+    get:
+      operationId: get_search_connections
+      tags:
+      - Search
+      summary: Use GET /search/connections to locate an individual connection by name, public ID, or tax ID.
+      x-source: https://apidocs.graphiteconnect.com/reference/connectionslist
+      parameters:
+      - name: since
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Oldest date to return connections.
+      - name: connectionPhases
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Comma separated list of connectionPhases to filter on - defaults to all phases if not specified.
+      - name: redirected
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Only return connections that were redirected.
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Used in conjunction with limit - if more connections are returned than the limit, page specifies which set of connections
+          to return.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum number of connections to return.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostApiOauthTokenRequest:
+      type: object
+      properties:
+        client_id:
+          type: string
+        client_secret:
+          type: string
+        grant_type:
+          type: string
+    PostOauthTokenRequest:
+      type: object
+      properties:
+        client_id:
+          type: string
+          description: The Graphite ID concatenated with the Key ID
+        client_secret:
+          type: string
+          description: The Key Secret
+        grant_type:
+          type: string
+          description: OAuth grant type, e.g., client_credentials
+      required:
+      - client_id
+      - client_secret
+      - grant_type
+    PatchProfilePublicidRequest:
+      type: object
+      properties:
+        Answer key:
+          type: object
+          description: JSON document of answer key/values
+    PatchProfilePublicidResponse:
+      type: object
+      properties:
+        Updated company data:
+          type: object
+          description: JSON document of updated company data. Document properties are answer keys.
+  securitySchemes:
+    OAuth_2.0_Client_Credentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.graphiteconnect.com/api/oauth/token
+          scopes: {}
+      x-source: https://apidocs.graphiteconnect.com/docs/authentication.md
+    Bearer_Token:
+      type: http
+      scheme: bearer
+      x-source: https://apidocs.graphiteconnect.com/docs/authentication.md
+tags:
+- name: Api
+- name: Oauth
+- name: Profile
+- name: Search
+security:
+- OAuth_2.0_Client_Credentials: []
+- Bearer_Token: []

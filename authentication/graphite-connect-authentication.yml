@@ -1,0 +1,26 @@
+generated: '2026-10-13'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://apidocs.graphiteconnect.com/docs/authentication.md
+sources:
+- https://apidocs.graphiteconnect.com/docs/authentication.md
+- https://apidocs.graphiteconnect.com/reference/authentication.md
+- https://apidocs.graphiteconnect.com/reference/authentication
+- https://apidocs.graphiteconnect.com/docs/authentication
+description: Graphite Connect Public API uses OAuth 2.0 client credentials flow to obtain a bearer token, which is then sent in the Authorization
+  header.
+schemes:
+- type: oauth2
+  name: OAuth 2.0 Client Credentials
+  evidence: The Graphite Connect Public API uses **OAuth 2.0 client credentials** flow.
+  flows:
+  - client_credentials
+  token_url: https://app.graphiteconnect.com/api/oauth/token
+  how_to_obtain: Contact support@graphiteconnect.com to get an API key, which serves as both client ID and client secret, then POST to the token
+    endpoint with grant_type=client_credentials.
+- type: http-bearer
+  name: Bearer Token
+  evidence: 'Include the bearer token in the `Authorization` header of all subsequent API requests:'
+  header: Authorization
+  how_to_obtain: Exchange the API key for a bearer token via the OAuth token endpoint.
+docs: https://apidocs.graphiteconnect.com/docs/authentication.md
