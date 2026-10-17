@@ -100,23 +100,23 @@ apis:
   x-coverage:
     state: unreadable
     reason: js-rendered-docs
-    detail: Homepage loads via Cloudflare and serves HTML; no machine‑readable OpenAPI or other contract found.
+    detail: >-
+      Homepage loads via Cloudflare and serves HTML; no machine‑readable OpenAPI or other contract found.
     evidence:
     - url: https://www.graphiteconnect.com
       status: 200
     checked: '2026-10-13'
   aid: graphite-connect:graphite-connect-api-2
-- aid: graphite-connect:graphite-connect-api
-  name: Graphite Connect API
-  description: 'Graphite Connect API as documented publicly: 4 operations. Contract generated from the documentation by API Evangelist (2026-10-13);
-
-    not the provider''s own document.'
-  humanURL: https://apidocs.graphiteconnect.com/reference
+- aid: graphite-connect:graphite-connect-oauth-api
+  name: Graphite Connect OAuth API
+  description: The Oauth API from Graphite Connect — 2 operation(s) for oauth.
+  humanURL: https://www.graphiteconnect.com/product
   baseURL: https://poc.projectgraphite.com
+  tags:
+  - Oauth
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/graphite-connect-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/graphite-connect-oauth-api-openapi.yml
   - type: JSONSchema
     url: json-schema/graphite-connect-post-oauth-token-request-schema.json
   - type: JSONSchema
@@ -125,7 +125,42 @@ apis:
     url: json-schema/graphite-connect-post-api-oauth-token-request-schema.json
   - type: JSONSchema
     url: json-schema/graphite-connect-patch-profile-publicid-request-schema.json
-
+- aid: graphite-connect:graphite-connect-profile-api
+  name: Graphite Connect Profile API
+  description: The Profile API from Graphite Connect — 1 operation(s) for profile.
+  humanURL: https://www.graphiteconnect.com/product
+  baseURL: https://poc.projectgraphite.com
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/graphite-connect-profile-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/graphite-connect-post-oauth-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-patch-profile-publicid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-post-api-oauth-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-patch-profile-publicid-request-schema.json
+- aid: graphite-connect:graphite-connect-search-api
+  name: Graphite Connect Search API
+  description: The Search API from Graphite Connect — 1 operation(s) for search.
+  humanURL: https://www.graphiteconnect.com/product
+  baseURL: https://poc.projectgraphite.com
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/graphite-connect-search-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/graphite-connect-post-oauth-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-patch-profile-publicid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-post-api-oauth-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/graphite-connect-patch-profile-publicid-request-schema.json
 x-coverage:
   state: gated
   reason: partner-login

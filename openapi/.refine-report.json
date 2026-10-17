@@ -1,0 +1,21 @@
+{
+  "provider": "graphite-connect",
+  "sources": [
+    "_ae-authored/graphite-connect-openapi-generated.yml"
+  ],
+  "outputs": [
+    "graphite-connect-oauth-api-openapi.yml",
+    "graphite-connect-profile-api-openapi.yml",
+    "graphite-connect-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "graphite-connect-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "graphite-connect-openapi-generated.yml: tagged paths POST /api/oauth/token -> Oauth",
+    "apis.yml register: written (+3 apis, 4 total)"
+  ],
+  "skipped": []
+}
